@@ -47,4 +47,16 @@ class Series
         
         return $result;
     }
+
+    public function findWordCharacter(){
+        $data = (object)$_POST;
+        $stringData = $data->givenString;
+
+        $totalWord = str_word_count($stringData);
+        $totalChar = strlen($stringData);
+
+        $totalCount['total_word'] = $totalWord;
+        $totalCount['total_char'] = $totalChar;
+        return $totalCount;
+    }
 }

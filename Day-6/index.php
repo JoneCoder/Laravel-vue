@@ -9,6 +9,13 @@ if(isset($_POST['btn'])){
     $result = "";
 }
 
+if(isset($_POST['btn1'])){
+    $series = new Series();
+    $totalCount = $series->findWordCharacter();
+}else{
+    $totalCount['total_word'] = ' ';
+    $totalCount['total_char'] = ' ';
+}
 
 ?>
 <div>
@@ -21,11 +28,11 @@ if(isset($_POST['btn'])){
             
             <tr>
                 <th>Total Number of Word</th>
-                <td><input type="text"></td>
+                <td><input type="text" value="<?php echo $totalCount['total_word'] ?>"></td>
             </tr>
             <tr>
                 <th>Total Number of Character</th>
-                <td><input type="text"></td>
+                <td><input type="text" value="<?php echo $totalCount['total_char'] ?>"></td>
             </tr>
             
             <tr>
