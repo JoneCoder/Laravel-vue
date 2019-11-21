@@ -6,10 +6,10 @@
  * Time: 12:38 PM
  */
 require_once './vendor/autoload.php';
-use App\classes\Number;
+use App\classes\Student;
 
 if(isset($_POST['btn'])){
-    $numbers = new Number();
+    $numbers = new Student();
     $data = $numbers->catchNumber();
 }else{
     $data = [];
