@@ -7,12 +7,10 @@
  */
 require_once './vendor/autoload.php';
 use App\classes\Student;
-
-if(isset($_POST['btn'])){
-    $students = new Student();
-    $message = $students->create();
-}else{
-    $message = '';
+$message = '';
+if (isset($_POST['btn'])){
+    $data = new Student();
+    $message = $data->create();
 }
 ?>
 <hr>
