@@ -11,12 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'uses' => 'FrontendController@index',
+    'as' => 'home'
+]);
+
+Route::get('/about', [
+    'uses' => 'FrontendController@about',
+    'as' => 'about'
+]);
 
 Route::get('/test', [
-    'uses' => 'TestController@test',
+    'uses' => 'FrontendController@test',
     'as' => 'test'
 ]);
-Route::get('/about', 'TestController@about')->name('about');
+
+Route::post('/form/data', [
+    'uses' => 'FrontendController@create',
+    'as' => 'create'
+]);

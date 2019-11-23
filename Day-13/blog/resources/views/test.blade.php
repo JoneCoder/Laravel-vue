@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
         <!-- Styles -->
         <style>
@@ -81,16 +83,31 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel About
+                    Laravel Form Submition
                 </div>
 
                 <div class="links">
                     <a href="{{ url('/') }}">Home</a>
                     <a href="{{ route('test') }}">Test</a>
                     <a href="{{ route('about') }}">About</a>
-                    <h3>{{ $name }}</h3>
-                    <h3>{{ $city }}</h3>
                 </div>
+                
+                <form action="{{ route('create') }}" method="post">
+                @csrf
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="pass" placeholder="Password">
+                  </div>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" name="check">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
     </body>

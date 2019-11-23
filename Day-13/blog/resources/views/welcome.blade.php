@@ -81,14 +81,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel Home
                 </div>
 
                 <div class="links">
                     <a href="{{ url('/') }}">Home</a>
-                    <a href="{{ url('/test') }}">Test</a>
+                    <a href="{{ route('test') }}">Test</a>
                     <a href="{{ route('about') }}">About</a>
-
                 </div>
             </div>
         </div>
