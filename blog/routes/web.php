@@ -47,3 +47,13 @@ Route::get('/add/categories', [
     'uses' => 'CategoryController@addCategory',
     'as' => 'addcategory'
 ]);
+
+Route::post('/new/categories', [
+    'uses' => 'CategoryController@add',
+    'as' => 'category'
+]);
+
+Route::get('/manage/categories', [
+    'uses' => 'CategoryController@manage',
+    'as' => 'manage_category'
+]);

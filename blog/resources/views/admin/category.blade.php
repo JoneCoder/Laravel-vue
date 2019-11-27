@@ -7,10 +7,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
+                @if(session('success'))
+                <div class="alert-success">
+                    {{ session('success') }}
+                </div>
+                @endif
                 <div class="card">
                     <div class="card-header">Add a new Product Category</div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="{{ route('category') }}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label class="col-md-3">Category Name</label>

@@ -45,6 +45,7 @@
                             <a class="dropdown-item" href="{{ route((Auth::User()->role == true)?'home': 'dashboard') }}" target="_blank">
                                 {{ __('Dashboard') }}
                             </a>
+                            @if(Auth::User()->role == false)
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -54,6 +55,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
+                            @endif
                         </div>
                     </li>
                 @endguest
