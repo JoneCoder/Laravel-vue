@@ -43,17 +43,37 @@ Route::get('/dashboard', [
     'as' => 'dashboard'
 ]);
 
-Route::get('/add/categories', [
+Route::get('/home/add/categories', [
     'uses' => 'CategoryController@addCategory',
     'as' => 'addcategory'
 ]);
 
-Route::post('/new/categories', [
+Route::post('/home/new/categories', [
     'uses' => 'CategoryController@add',
     'as' => 'category'
 ]);
 
-Route::get('/manage/categories', [
+Route::get('/home/manage/categories', [
     'uses' => 'CategoryController@manage',
     'as' => 'manage_category'
+]);
+
+Route::get('/home/manage/categories/status/{id}', [
+    'uses' => 'CategoryController@action',
+    'as' => 'action'
+]);
+
+Route::get('/home/manage/categories/edit/{id}', [
+    'uses' => 'CategoryController@edit',
+    'as' => 'edit'
+]);
+
+Route::post('/home/manage/categories/edit', [
+    'uses' => 'CategoryController@update',
+    'as' => 'edit_category'
+]);
+
+Route::get('/home/manage/categories/delete/{id}', [
+    'uses' => 'CategoryController@delete',
+    'as' => 'delete'
 ]);

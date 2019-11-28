@@ -24,4 +24,21 @@ class Category extends Model
 
         Category::create($request->all());
     }
+
+    public static function changeStatus($id){
+        if (Category::find($id)->status == 1){
+            Category::find($id)->update([
+                'status' => 0
+            ]);
+        }else{
+            Category::find($id)->update([
+                'status' => 1
+            ]);
+        }
+
+    }
+
+    public static function updateCategory($request){
+        Category::find($request->id)->update($request->all());
+    }
 }

@@ -40,10 +40,12 @@
                             <td>{{ $i++ }}</td>
                             <td>{{ $category->type }}</td>
                             <td>{{ $category->description }}</td>
-                            <td>{{ $category->status == 1 ? 'Published':'Unpublished' }}</td>
+                            <td>{{ $category->status == 1 ? 'Published':'Unpublished' }}
+                            <a href="{{ route('action', ['id' => $category->id]) }}" class="btn btn-info">Change</a>
+                            </td>
                             <td>
-                                <a href="">Edit</a>
-                                <a href="">Delete</a>
+                                <a href="{{ route('edit', ['id' => $category->id]) }}" class="btn btn-info">Edit</a>
+                                <a href="{{ route('delete', ['id' => $category->id]) }}" class="btn btn-warning mt-2">Delete</a>
                             </td>
                         </tr>
                     @endforeach
